@@ -1,3 +1,5 @@
+"use client";
+
 import AnimationContainer from "@/components/global/animation-container";
 import MaxWidthWrapper from "@/components/global/max-width-wrapper";
 import PricingCards from "@/components/pricing-cards";
@@ -21,6 +23,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
@@ -30,13 +33,29 @@ const HomePage = () => {
       {/* Hero Section */}
       <MaxWidthWrapper className="pt-32 relative">
         {/* Background decorative blobs */}
-        <div className="absolute top-20 left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-20 right-0 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <motion.div 
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl"
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute top-20 right-0 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl"
+        />
+        <motion.div 
+          animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.4, 0.3] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl"
+        />
 
         <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-slate-50 relative z-10">
           <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
-            <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_100%)_inset] transition-colors duration-200 border border-slate-200 mb-8 hover:shadow-md">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_100%)_inset] transition-colors duration-200 border border-slate-200 mb-8 hover:shadow-md"
+            >
               <span>
                 <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
               </span>
@@ -46,7 +65,7 @@ const HomePage = () => {
                 ✨ Discover the all-new Faria 2.0
                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
               </span>
-            </button>
+            </motion.button>
             <h1 className="text-slate-900 text-center py-6 text-5xl font-bold tracking-tight text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.1] w-full">
               Manage links with <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 inline-block drop-shadow-sm">
@@ -77,11 +96,20 @@ const HomePage = () => {
           >
             <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[6rem] animate-image-glow"></div>
             
-            <div className="relative -m-2 rounded-[2.5rem] p-2 ring-1 ring-inset ring-slate-200/50 lg:-m-4 lg:rounded-[3rem] bg-white/40 backdrop-blur-3xl shadow-2xl">
+            <motion.div 
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="relative -m-2 rounded-[2.5rem] p-2 ring-1 ring-inset ring-slate-200/50 lg:-m-4 lg:rounded-[3rem] bg-white/40 backdrop-blur-3xl shadow-2xl"
+            >
               <BorderBeam size={250} duration={12} delay={9} />
               
               {/* Floating Elements */}
-              <div className="absolute -left-8 top-20 w-48 h-24 bg-white/90 backdrop-blur-xl rounded-2xl border border-white shadow-xl p-4 animate-float hidden lg:flex flex-col justify-center z-50">
+              <motion.div 
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -left-8 top-20 w-48 h-24 bg-white/90 backdrop-blur-xl rounded-2xl border border-white shadow-xl p-4 hidden lg:flex flex-col justify-center z-50"
+              >
                 <div className="flex items-center gap-3 mb-1">
                   <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                     <TrendingUp size={16}/>
@@ -89,9 +117,13 @@ const HomePage = () => {
                   <span className="text-sm font-semibold text-slate-700">Total Clicks</span>
                 </div>
                 <span className="text-2xl font-bold text-slate-900 ml-11">24,592</span>
-              </div>
+              </motion.div>
 
-              <div className="absolute -right-8 bottom-32 w-56 h-20 bg-white/90 backdrop-blur-xl rounded-2xl border border-white shadow-xl p-4 animate-float-delayed hidden lg:flex items-center gap-4 z-50">
+              <motion.div 
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -right-8 bottom-32 w-56 h-20 bg-white/90 backdrop-blur-xl rounded-2xl border border-white shadow-xl p-4 hidden lg:flex items-center gap-4 z-50"
+              >
                 <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 shrink-0">
                   <LinkIcon size={18}/>
                 </div>
@@ -99,7 +131,7 @@ const HomePage = () => {
                   <span className="text-sm font-semibold text-slate-900">New link created</span>
                   <span className="text-xs text-slate-500">faria.io/launch</span>
                 </div>
-              </div>
+              </motion.div>
 
               <div className="w-full h-[400px] md:h-[600px] bg-slate-100 rounded-[2rem] overflow-hidden relative border border-slate-200/50">
                 <Image src="https://picsum.photos/seed/dashboard/1920/1080" alt="Dashboard" fill className="object-cover" referrerPolicy="no-referrer" />
@@ -107,7 +139,7 @@ const HomePage = () => {
               </div>
               <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-slate-50 z-40"></div>
               <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-slate-50 z-50"></div>
-            </div>
+            </motion.div>
           </AnimationContainer>
         </div>
       </MaxWidthWrapper>
@@ -123,7 +155,11 @@ const HomePage = () => {
               <div className="mt-10">
                 <ul className="flex flex-wrap items-center gap-x-8 gap-y-8 md:gap-x-16 justify-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                   {COMPANIES.map((company) => (
-                    <li key={company.name} className="hover:scale-105 transition-transform duration-300">
+                    <motion.li 
+                      whileHover={{ scale: 1.1 }}
+                      key={company.name} 
+                      className="transition-transform duration-300"
+                    >
                       <Image
                         src={company.logo}
                         alt={company.name}
@@ -133,7 +169,7 @@ const HomePage = () => {
                         className="w-28 h-auto object-contain"
                         referrerPolicy="no-referrer"
                       />
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
@@ -182,21 +218,23 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full py-8 gap-6 md:gap-8">
           {PROCESS.map((process, id) => (
             <AnimationContainer delay={0.2 * id} key={id}>
-              <MagicCard className="group md:py-8 hover:-translate-y-2 transition-transform duration-300">
-                <div className="flex flex-col items-start justify-center w-full">
-                  <div className="w-14 h-14 rounded-[1.25rem] bg-indigo-50 flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors duration-300">
-                    <span className="text-indigo-600 font-bold text-2xl group-hover:text-white">{id + 1}</span>
+              <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
+                <MagicCard className="group md:py-8 transition-transform duration-300">
+                  <div className="flex flex-col items-start justify-center w-full">
+                    <div className="w-14 h-14 rounded-[1.25rem] bg-indigo-50 flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors duration-300">
+                      <span className="text-indigo-600 font-bold text-2xl group-hover:text-white">{id + 1}</span>
+                    </div>
+                    <div className="flex flex-col relative items-start">
+                      <h3 className="text-xl font-semibold text-slate-900">
+                        {process.title}
+                      </h3>
+                      <p className="mt-3 text-base text-slate-600 leading-relaxed">
+                        {process.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-col relative items-start">
-                    <h3 className="text-xl font-semibold text-slate-900">
-                      {process.title}
-                    </h3>
-                    <p className="mt-3 text-base text-slate-600 leading-relaxed">
-                      {process.description}
-                    </p>
-                  </div>
-                </div>
-              </MagicCard>
+                </MagicCard>
+              </motion.div>
             </AnimationContainer>
           ))}
         </div>
@@ -221,12 +259,15 @@ const HomePage = () => {
         </AnimationContainer>
         <AnimationContainer delay={0.3}>
           <div className="flex flex-wrap items-start md:items-center justify-center lg:justify-evenly gap-6 mt-12 max-w-5xl mx-auto w-full">
-            <div className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
+            >
               <CreditCardIcon className="w-5 h-5 text-indigo-500" />
               <span className="text-slate-600 font-medium text-sm">
                 No credit card required to start
               </span>
-            </div>
+            </motion.div>
           </div>
         </AnimationContainer>
       </MaxWidthWrapper>
@@ -358,10 +399,12 @@ const HomePage = () => {
                 next-gen platform.
               </p>
               <div className="mt-10">
-                <Button size="lg" className="rounded-full bg-white text-slate-900 hover:bg-slate-100 font-semibold text-base px-8 shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all duration-300 hover:-translate-y-1">
-                  Get started for free
-                  <ArrowRightIcon className="w-5 h-5 ml-2" />
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" className="rounded-full bg-white text-slate-900 hover:bg-slate-100 font-semibold text-base px-8 shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all duration-300">
+                    Get started for free
+                    <ArrowRightIcon className="w-5 h-5 ml-2" />
+                  </Button>
+                </motion.div>
               </div>
             </div>
           </LampContainer>

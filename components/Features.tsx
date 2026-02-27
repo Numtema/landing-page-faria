@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Link2, Search, Calendar, BarChart3, Shield, Zap } from "lucide-react";
 import Image from "next/image";
 

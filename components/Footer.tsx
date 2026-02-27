@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Zap } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
@@ -23,30 +24,30 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-medium mb-6">Product</h4>
             <ul className="flex flex-col gap-4 text-sm">
-              <li><Link href="#" className="hover:text-white transition-colors">Features</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Pricing</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Testimonials</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Integration</Link></li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Features</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Pricing</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Testimonials</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Integration</Link></motion.li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-medium mb-6">Resources</h4>
             <ul className="flex flex-col gap-4 text-sm">
-              <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Help Center</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Documentation</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">API Reference</Link></li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Blog</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Help Center</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Documentation</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">API Reference</Link></motion.li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-medium mb-6">Company</h4>
             <ul className="flex flex-col gap-4 text-sm">
-              <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Contact</Link></li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">About Us</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-white transition-colors">Contact</Link></motion.li>
             </ul>
           </div>
         </div>
@@ -56,9 +57,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Faria Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-slate-500 hover:text-white transition-colors">Twitter</Link>
-            <Link href="#" className="text-slate-500 hover:text-white transition-colors">GitHub</Link>
-            <Link href="#" className="text-slate-500 hover:text-white transition-colors">Discord</Link>
+            <motion.div whileHover={{ y: -2 }}><Link href="#" className="text-slate-500 hover:text-white transition-colors">Twitter</Link></motion.div>
+            <motion.div whileHover={{ y: -2 }}><Link href="#" className="text-slate-500 hover:text-white transition-colors">GitHub</Link></motion.div>
+            <motion.div whileHover={{ y: -2 }}><Link href="#" className="text-slate-500 hover:text-white transition-colors">Discord</Link></motion.div>
           </div>
         </div>
       </div>

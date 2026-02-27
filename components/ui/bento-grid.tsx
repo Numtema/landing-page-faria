@@ -1,3 +1,5 @@
+"use client";
+
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon, CalendarIcon, Link2Icon, SearchIcon, WaypointsIcon } from "lucide-react";
@@ -5,6 +7,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const CARDS = [
     {
@@ -114,8 +117,10 @@ const BentoCard = ({
     href: string;
     cta: string;
 }) => (
-    <div
+    <motion.div
         key={name}
+        whileHover={{ y: -8 }}
+        transition={{ type: "spring", stiffness: 300 }}
         className={cn(
             "group relative col-span-3 flex flex-col justify-between border border-slate-200 overflow-hidden rounded-[2.5rem]",
             "bg-white shadow-sm hover:shadow-md transition-shadow",
@@ -143,7 +148,7 @@ const BentoCard = ({
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Link>
         </div>
-    </div>
+    </motion.div>
 );
 
 export { BentoCard, BentoGrid };
