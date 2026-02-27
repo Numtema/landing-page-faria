@@ -16,7 +16,7 @@ export const CARDS = [
         description: "Create short links that are easy to remember and share.",
         href: "#",
         cta: "Learn more",
-        className: "col-span-3 lg:col-span-1",
+        className: "col-span-1 md:col-span-1",
         background: (
             <div className="absolute right-0 top-10 w-[80%] origin-top rounded-l-[2rem] border border-border bg-slate-50 transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 p-6">
                 <div className="space-y-2">
@@ -33,7 +33,7 @@ export const CARDS = [
         description: "Quickly find the links you need with AI-powered search.",
         href: "#",
         cta: "Learn more",
-        className: "col-span-3 lg:col-span-2",
+        className: "col-span-1 md:col-span-2",
         background: (
             <div className="absolute right-10 top-10 w-[70%] origin-to translate-x-0 border border-border bg-white rounded-[2rem] transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:-translate-x-10 p-4 shadow-sm">
                 <div className="h-12 w-full bg-slate-50 border border-slate-100 rounded-xl flex items-center px-4 mb-4">
@@ -54,7 +54,7 @@ export const CARDS = [
         description: "Integrate with your favorite apps and services.",
         href: "#",
         cta: "Learn more",
-        className: "col-span-3 lg:col-span-2 max-w-full overflow-hidden",
+        className: "col-span-1 md:col-span-2 max-w-full overflow-hidden",
         background: (
             <div className="absolute right-2 pl-28 md:pl-0 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 flex items-center justify-center">
                  <Image src="https://picsum.photos/seed/integrations/600/300" alt="Integrations" width={600} height={300} className="rounded-[2rem] opacity-80" />
@@ -65,7 +65,7 @@ export const CARDS = [
         Icon: CalendarIcon,
         name: "Calendar",
         description: "Keep track of your links with our calendar view.",
-        className: "col-span-3 lg:col-span-1",
+        className: "col-span-1 md:col-span-1",
         href: "#",
         cta: "Learn more",
         background: (
@@ -91,7 +91,7 @@ const BentoGrid = ({
     return (
         <div
             className={cn(
-                "grid w-full auto-rows-[22rem] grid-cols-3 gap-6",
+                "grid w-full auto-rows-[22rem] grid-cols-1 md:grid-cols-3 gap-6",
                 className,
             )}
         >
@@ -122,7 +122,7 @@ const BentoCard = ({
         whileHover={{ y: -8 }}
         transition={{ type: "spring", stiffness: 300 }}
         className={cn(
-            "group relative col-span-3 flex flex-col justify-between border border-slate-200 overflow-hidden rounded-[2.5rem]",
+            "group relative col-span-1 flex flex-col justify-between border border-slate-200 overflow-hidden rounded-[2.5rem]",
             "bg-white shadow-sm hover:shadow-md transition-shadow",
             className,
         )}

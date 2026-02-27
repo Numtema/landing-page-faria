@@ -66,24 +66,24 @@ const HomePage = () => {
                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
               </span>
             </motion.button>
-            <h1 className="text-slate-900 text-center py-6 text-5xl font-bold tracking-tight text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.1] w-full">
+            <h1 className="text-slate-900 text-center py-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl !leading-[1.1] w-full font-bold tracking-tight text-balance">
               Manage links with <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 inline-block drop-shadow-sm">
                 beautiful precision
               </span>
             </h1>
-            <p className="mb-12 text-lg tracking-tight text-slate-600 md:text-xl text-balance max-w-2xl mx-auto">
+            <p className="mb-10 text-base sm:text-lg md:text-xl tracking-tight text-slate-600 text-balance max-w-2xl mx-auto px-4">
               Effortlessly streamline your link management. Shorten, track, and organize all your links in one beautiful, rounded interface.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center whitespace-nowrap gap-4 z-50">
-              <Button asChild size="lg" className="rounded-full shadow-xl shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:-translate-y-1 transition-all duration-300 px-8">
-                <Link href={"/signup"} className="flex items-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 z-50 w-full px-6 sm:px-0">
+              <Button asChild size="lg" className="w-full sm:w-auto rounded-full shadow-xl shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:-translate-y-1 transition-all duration-300 px-8">
+                <Link href={"/signup"} className="flex items-center justify-center">
                   Start creating for free
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8 hover:bg-slate-100 transition-all duration-300">
-                <Link href={"#demo"} className="flex items-center">
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-8 hover:bg-slate-100 transition-all duration-300">
+                <Link href={"#demo"} className="flex items-center justify-center">
                   View Demo
                 </Link>
               </Button>
@@ -133,7 +133,7 @@ const HomePage = () => {
                 </div>
               </motion.div>
 
-              <div className="w-full h-[400px] md:h-[600px] bg-slate-100 rounded-[2rem] overflow-hidden relative border border-slate-200/50">
+              <div className="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px] bg-slate-100 rounded-[2rem] overflow-hidden relative border border-slate-200/50">
                 <Image src="https://picsum.photos/seed/dashboard/1920/1080" alt="Dashboard" fill className="object-cover" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent" />
               </div>
